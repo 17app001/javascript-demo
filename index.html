@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>JavaScript Demo</h1>
+
+    <script>
+      //   const PI = 3.1415926;
+      //   let radius = Number(prompt("請輸入半徑:"));
+      //   console.log(radius, typeof radius);
+
+      //   let area = radius ** 2 * PI;
+
+      //   alert("面積為" + area);
+
+      //   //   三種輸出
+      //   //   1.console.log
+      //   //   2.document.write
+      //   //   3.alert
+      //   console.log(radius, typeof radius);
+      //   document.write("<h2>面積為:" + radius + "</h2>");
+      //   //   alert("面積為:" + radius);
+
+      //   //Number
+      //   let x = Number(prompt("請輸入數字x:"));
+      //   let y = Number(prompt("請輸入數字y:"));
+      //   console.log(x, y, typeof x, typeof y);
+
+      //   //強制轉型
+      //   console.log("總合為:" + (x + y));
+      //   // +在字串是字串串接
+      //   // -*/**% 字串會轉型成數值進行運算
+
+      const EMAIL = "Jerry@gmail.com.JP";
+      console.log(EMAIL.length);
+      console.log(EMAIL + ".tw");
+      console.log(EMAIL[EMAIL.length - 1]);
+      console.log(EMAIL.lastIndexOf("J"));
+      console.log(EMAIL.substring(0, 5));
+      console.log(EMAIL.replace("Jerry", "Mario"));
+      console.log(EMAIL.split("@"));
+      console.log(EMAIL.includes("Jerry"));
+      console.log("Jerry" == "Jerry");
+
+      //   0~~15
+      // i=i+1 i+=1 ==>i++
+      let i = 0;
+      for (let i = 0; i < EMAIL.length; i++) {
+        console.log(i, EMAIL[i]);
+      }
+
+      console.log(i);
+      let x = 0;
+      console.log(++x);
+      console.log(x);
+
+      //   ! ==>not
+      console.log("25" != 25);
+      console.log(Number("25") == 25);
+      console.log("25" !== 25);
+
+      // Number/String/Boolean
+      x = 1;
+      console.log(Number(x));
+      console.log(String(x));
+      console.log(Boolean(x));
+
+      let a = 10;
+      let b = 20;
+      let c = 30;
+
+      // and-->&& or-->||
+      if (a < b || c++ > b) {
+        console.log("1");
+      }
+
+      console.log(c);
+
+      console.log(15 * 4);
+      console.log(15 << 2);
+    </script>
+  </body>
+</html>
