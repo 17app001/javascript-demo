@@ -1,15 +1,12 @@
 
 
-// 宣告樂透function
-function getRandomNumber(start, end, numbers) {
-    let lotto = [];
-    for (let i = 0; i < numbers; i++) {
-        let n = Math.floor(Math.random() * (end - start + 1)) + start;
-        lotto.push(n);
-    }
+const h1El = document.querySelector("h1");
 
-    return lotto;
-}
+
+
+h1El.innerText = "<h2>大樂透2022/7/28</h2>";
+h1El.innerHTML = "<h2 style='color:red'>大樂透2022/7/28</h2>";
+
 
 
 console.log(Math.PI);
@@ -95,10 +92,10 @@ for (let i = 0; i < students.length; i++) {
 
 
 let lotto = [];
-const count = prompt("請輸入幾組號碼?")
-// const count = 5;
+// const count = prompt("請輸入幾組號碼?")
+const count = 5;
 for (let j = 0; j < count; j++) {
-    lotto.push(getRandomNumber(1, 50, 5));
+    lotto.push(getLottoNumber(1, 50, 5));
 }
 
 console.log(lotto);
@@ -118,4 +115,93 @@ for (let i = 0; i < lotto.length; i++) {
 ulStr += "</ul>";
 document.write(ulStr);
 
+
+// 宣告樂透function
+function getLottoNumber(start, end, numbers, special = false) {
+    let lotto = [];
+
+    do {
+        let n = Math.floor(Math.random() * (end - start + 1)) + start;
+        if (!lotto.includes(n)) {
+            lotto.push(n);
+        }
+    } while (lotto.length < numbers);
+
+    // 排序
+    lotto.sort((a, b) => a - b);
+
+    if (special) {
+        let n = Math.floor(Math.random() * (end - start + 1)) + start;
+        lotto.push(n);
+    }
+
+    return lotto;
+}
+
+
+function getBmi(height, weight, point = 2) {
+    bmi = weight / (height / 100) ** 2;
+
+    if (isNaN(bmi)) {
+        return "數值傳入有誤!";
+    }
+
+    return bmi.toFixed(point);
+}
+
+const getBmi2 = (height, weight, point = 2) => (weight / (height / 100) ** 2).toFixed(point);
+
+
+console.log(getBmi("a", "54.5", point = 3));
+console.log(getBmi2("176", "58.5", point = 3));
+
+a = "35.5";
+
+console.log(parseInt(a) + 10);
+
+console.log(getLottoNumber(1, 49, 6, special = true));
+
+
+let user = {
+    name: 'jerry',
+    email: 'jerry@gmail.com',
+    password: '12345678',
+}
+
+// console.log(user, typeof (user));
+// console.log(user["name"], user.name);
+let users = [
+    {
+        name: 'jerry',
+        email: 'jerry@gmail.com',
+        password: '12345678',
+    },
+    {
+        name: 'Mary',
+        email: 'mary@gmail.com',
+        password: '123456',
+    },
+    {
+        name: 'kevin',
+        email: 'kevin@gmail.com',
+        password: '111111',
+    },
+]
+
+console.log(users[0], typeof (users));
+
+for (let i = 0; i < users.length; i++) {
+    console.log(users[i].name);
+    console.log(users[i].email);
+    console.log(users[i].password);
+
+}
+
+users.forEach(user => console.log(user.name, user.email, user.password));
+
+
+users.forEach(user => {
+    document.write(`<h2>姓名:${user.name} 信箱:${user.email} 密碼:${user.password}</h2>`)
+    console.log(user["name"], user.email, user.password);
+});
 
